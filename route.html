@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>demo</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="address=no"/>
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="css/swiper.css">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="app">
+
+<header>
+    <div class="header">
+        <p class="left"><img src="images/logo.png" alt=""></p>
+        <span class="center">下载酷狗</span>
+        <p class="right"><i class="fa fa-search f16"></i></p>
+    </div>
+    <div class="oul">
+        <ul>
+            <li class="bor"><a href="#/newsong">新歌</a></li>
+            <li><a href="#/rank">排行</a></li>
+            <li><a href="#songlist">歌单</a></li>
+            <li><a href="#/singer">歌手</a></li>
+        </ul>
+    </div>
+</header>
+
+<section>
+
+<div ng-view></div>
+
+</section>
+
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/swiper.js"></script>
+
+
+<script>
+
+    $("ul li").on("click",function(){
+        $(this).addClass("bor").siblings().removeClass("bor")
+    })
+
+    var app = angular.module("app",["ngRoute"])
+    app.run(function($rootScope,$http){
+        $http.get("data/music_list.json")
+                .success(function(data){
+                    $rootScope.data = data.data
+
+                })
+        $http.get("data/rank.json")
+                .success(function(ranklist){
+                    $rootScope.ranklist = ranklist
+                })
+        $http.get("data/songlist.json")
+                .success(function(songlist){
+                    $rootScope.songlist = songlist
+                })
+    })
+
+
+    app.config(function($routeProvider){
+        $routeProvider
+        .when("/newsong",{
+            templateUrl:"pages/newsong.html",
+                    controller:function(){
+                        new Swiper(".swiper-container",{
+                            autoplay: 1000
+                        })
+                    }
+
+
+        })
+        .when("/rank",{
+            templateUrl:"pages/rank.html"
+        })
+        .when("/songlist",{
+            templateUrl:"pages/songlist.html"
+        })
+        .when("/singer",{
+            templateUrl:"pages/singer.html"
+        })
+        .otherwise("/newsong")
+    })
+</script>
+
+</body>
+</html>

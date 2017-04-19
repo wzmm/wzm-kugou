@@ -1,0 +1,112 @@
+.header {
+  height: 0.44rem;
+  background: #2ca2f9;
+  display: flex;
+  position: relative;
+  color: #fff; }
+  .header .left {
+    position: absolute;
+    left: 0.15rem;
+    height: 100%; }
+    .header .left img {
+      display: inline-block;
+      width: 0.8rem;
+      height: 0.2rem;
+      padding-top: 12px; }
+  .header .center {
+    border: 1px solid #ffffff;
+    border-radius: 0.04rem;
+    padding: 0.04rem 0.08rem;
+    margin-left: 0.1rem;
+    position: absolute;
+    left: 1rem;
+    top: 0.1rem; }
+  .header .right {
+    position: absolute;
+    right: 0.15rem;
+    line-height: 0.44rem; }
+
+.oul {
+  height: 0.44rem;
+  border-bottom: 1px solid #ccc; }
+  .oul ul {
+    display: flex; }
+    .oul ul li {
+      flex: 1;
+      text-align: center;
+      line-height: 0.41rem;
+      font-size: 0.14rem; }
+  .oul .bor {
+    border-bottom: 3px solid #2ca2f9; }
+
+section {
+  flex: 1;
+  overflow-y: scroll;
+  padding-top: 0.05rem; }
+  section .banner {
+    height: 1.2rem; }
+    section .banner img {
+      width: 100%;
+      height: 100%; }
+  section .new-list p {
+    height: 0.5rem;
+    line-height: 0.5rem;
+    position: relative;
+    border-bottom: 1px solid #ccc; }
+    section .new-list p .left {
+      position: absolute;
+      left: 0.15rem; }
+    section .new-list p .right {
+      position: absolute;
+      right: 0.15rem; }
+      section .new-list p .right img {
+        width: 0.15rem;
+        height: 0.15rem; }
+  section .ranklist, section .songlist {
+    display: flex;
+    position: relative; }
+    section .ranklist dl, section .songlist dl {
+      height: 0.8rem;
+      width: 100%;
+      border-bottom: 1px solid #ccc;
+      display: flex; }
+      section .ranklist dl dt img, section .songlist dl dt img {
+        width: 0.7rem;
+        height: 0.7rem;
+        margin-top: 0.05rem;
+        margin-left: 0.15rem; }
+      section .ranklist dl dd, section .songlist dl dd {
+        margin-left: 0.15rem; }
+    section .ranklist .posi, section .songlist .posi {
+      position: absolute;
+      right: 0.15rem;
+      line-height: 0.8rem; }
+  section .ranklist dd {
+    line-height: 0.8rem; }
+  section .songlist dd {
+    margin-top: 0.2rem; }
+    section .songlist dd span {
+      color: #a3a3a3; }
+    section .songlist dd img {
+      width: 0.1rem;
+      height: 0.1rem; }
+  section .big {
+    width: 100%;
+    padding-left: 0.15rem;
+    padding-right: 0.15rem;
+    box-sizing: border-box; }
+    section .big .singer {
+      background: #fbfbfb;
+      border: 1px solid #ccc;
+      margin-top: 0.2rem;
+      border-radius: 0.04rem; }
+      section .big .singer p {
+        line-height: 0.4rem;
+        border-bottom: 1px solid #ccc; }
+        section .big .singer p .left {
+          margin-left: 0.15rem; }
+        section .big .singer p .right {
+          float: right;
+          margin-right: 0.15rem; }
+
+/*# sourceMappingURL=style.css.map */
